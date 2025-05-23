@@ -1,17 +1,29 @@
-# Print Sum of Even Numbers Between 1 and 100. Use a loop to find and print the sum of all even numbers from 1 to 100.
+# Vowel or Consonant Check
+# Accept a single character from the user and check if it is a vowel (a, e, i, o, u). If not, print it's a consonant.
+# Expected Input:
+# Enter a character: e
 # Expected Output:
-# Sum of even numbers between 1 to 100 is: 2550
+# 'e' is a vowel.
 
-def sumOfEvenNumbers():
-    sum = 0
-    for i in range(1, 101):
-        if (i % 2 == 0):
-            sum = sum + i
-    return sum
+def checkVowelOrConsonant():
+    try:
+        char = input("Enter a character: ")
+        if ((len(char) != 1) or (not char.isalpha())):
+            raise ValueError("Please enter a single alphabetic character.")
+        
+        if char in 'aeiou':
+            print(char, " is a vowel.")
+        else:
+            print(char, " is a consonant.")
+    except ValueError as ve:
+        print(ve)
+        return
+    except Exception as e:
+        print("An unexpected error occurred: ", e)
+        return
 
 def main():
-    sum = sumOfEvenNumbers()
-    print("Sum of even numbers between 1 to 100 is:", sum)
+    checkVowelOrConsonant()
 
 if (__name__ == "__main__"):
     main()

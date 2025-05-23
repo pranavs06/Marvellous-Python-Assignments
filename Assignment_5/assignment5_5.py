@@ -1,23 +1,26 @@
-# Accept a number from the user and check whether it is prime or not.
+# Even or Odd Number Check
+# Write a program to check whether the entered number is even or odd.
 # Expected Input:
-# Enter a number: 11
+# Enter a number: 17
 # Expected Output:
-# 11 is a prime number.
+# 17 is an odd number.
 
-def isPrime(number):
-    if (number <= 1):
-        return False
-    for i in range(2, int(number ** 0.5) + 1):
-        if (number % i == 0):
-            return False
-    return True
+def checkEvenOrOdd():
+    try:
+        num = int(input("Enter a number: "))
+        if (num % 2 == 0):
+            print(num, "is an even number.")
+        else:
+            print(num, "is an odd number.")
+    except ValueError as ve:
+        print(ve)
+        return
+    except Exception as e:
+        print("An unexpected error occurred: ", e)
+        return
 
 def main():
-    number = int(input("Enter a number: "))
-    if isPrime(number):
-        print(number, " is a prime number.")
-    else:
-        print(number, " is not a prime number.")
+    checkEvenOrOdd()
 
-if __name__ == "__main__":
+if (__name__ == "__main__"):
     main()

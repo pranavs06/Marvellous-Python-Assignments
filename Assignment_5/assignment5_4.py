@@ -1,18 +1,37 @@
-# Accept a number and print its factorial using a for loop.
-# Expected Input:
-# Enter a number: 5
-# Expected Output:
-# Factorial of 5 is: 120
+# Find Largest Among Three Numbers
+# Accept three numbers from the user and print the largest using nested if-else statements.
+# Expected Input: Enter three numbers: 5 9 3
+# Expected Output: Largest number is 9.
 
-def displayFactorial():
-    number = int(input("Enter a number: "))
-    factorial = 1
-    for i in range(1, number + 1):
-        factorial = factorial * i
-    print("Factorial of ", number, " is: ", factorial)
+def findLargestNumber():
+    try:
+        num1 = int(input("Enter first number: "))
+        num2 = int(input("Enter second number: "))
+        num3 = int(input("Enter third number: "))
+        
+        largest = 0
+
+        if (num1 >= num2):
+            if (num1 >= num3):
+                largest = num1
+            else:
+                largest = num3
+        else:
+            if (num2 >= num3):
+                largest = num2
+            else:
+                largest = num3
+
+        print("Largest number is: ", largest)
+    except ValueError as ve:
+        print(ve)
+        return
+    except Exception as e:
+        print("An unexpected error occurred: ", e)
+        return
 
 def main():
-    displayFactorial()
+    findLargestNumber()
 
 if (__name__ == "__main__"):
     main()

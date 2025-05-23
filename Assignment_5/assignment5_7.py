@@ -1,20 +1,34 @@
-# Accept 5 numbers from the user. Find and print the largest number.
+# Area and Perimeter of Rectangle
+# Accept the length and width of a rectangle. Calculate and display the area and perimeter.
 # Expected Input:
-# Enter 5 numbers: 23 89 12 56 45
+# Enter length: 5
+# Enter width: 3
 # Expected Output:
-# Maximum number is: 89
+# Area: 15
+# Perimeter: 16
 
-def findLargestNumber():
-    numbers = []
-    print("Enter 5 numbers: ")
-    for i in range(5):
-        number = int(input("Enter a number: "))
-        numbers.append(number)
-    largestNumber = max(numbers)
-    print("Maximum number is: ", largestNumber)
+def calculateAreaAndPerimeter():
+    try:
+        length = float(input("Enter length: "))
+        width = float(input("Enter width: "))
+        
+        if (length <= 0 or width <= 0):
+            raise ValueError("Length and width must be positive numbers.")
+        
+        area = length * width
+        perimeter = 2 * (length + width)
+        
+        print("Area of rectangle is: ", area)
+        print("Perimeter of rectangle is: ", perimeter)
+    except ValueError as ve:
+        print(ve)
+        return
+    except Exception as e:
+        print("An unexpected error occurred: ", e)
+        return
 
 def main():
-    findLargestNumber()
+    calculateAreaAndPerimeter()
 
 if (__name__ == "__main__"):
     main()
